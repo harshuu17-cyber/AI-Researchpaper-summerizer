@@ -1,0 +1,13 @@
+services:
+  # Option 1: Unified Docker Service (Frontend + Backend in one container)
+  - type: web
+    name: researchlens
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
